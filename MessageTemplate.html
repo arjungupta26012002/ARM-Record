@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    color: #e6b800;
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  p {
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .indent-line {
+    padding-left: 40px;
+  }
+  b, strong {
+      font-weight: bold;
+  }
+</style>
+
+</head>
+<body>
+
+  <p>Hello @everyone,</p><br>
+
+  <p><b>We trust you’ve had a productive day.</b></p><br>
+  <p>For those who could not attend the recent Action Review Meeting or would like to revisit the key points discussed, the session recording(s) are now available. 🎥</p><br>
+
+  <p>📅 <b>Session Details:</b></p><br>
+
+  <? for (var i = 0; i < recordingsData.length; i++) { ?>
+    <div class="recording-details">
+      <p class="indent-line"><b>&emsp;&emsp;Session <?= recordingsData[i].sessionNumber ?>:</b> <?= internshipName ?> - Week <?= week ?> Recording</p>
+      <p class="indent-line"><b>&emsp;&emsp;Date:</b> <?= recordingsData[i].recordingDateTime ?></p>
+      <p class="indent-line"><b>&emsp;&emsp;Recording Link:</b> <a href="<?= recordingsData[i].recordingLink ?>" target="_blank"><?= recordingsData[i].fileName ?></a></p>
+    </div>
+    <? if (i < recordingsData.length - 1) { ?><br><? } ?>
+  <? } ?>
+  <br>
+
+  <p>Please ensure you review the recording at your earliest convenience to stay informed about key updates and action points.</p><br>
+  <p>Thank you for your commitment to excellence!</p><br>
+  <p>Best regards,</p><br>
+
+  <p><b><?= name ?></b><br>
+  Talent Discovery Team<br>
+  <b>Excelerate</b></p>
+
+</body>
+</html>
